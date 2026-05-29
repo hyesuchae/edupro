@@ -1,0 +1,1284 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>데이터 탐정단 1기 모집</title>
+    <meta
+      name="description"
+      content="중학생을 위한 데이터 x 수학 x AI 문제해결 프로젝트, 데이터 탐정단 1기 모집 랜딩페이지"
+    />
+    <meta property="og:title" content="데이터 탐정단 1기 모집!" />
+    <meta
+      property="og:description"
+      content="AI로 분석하고, 데이터로 사건을 해결하라. 중학생을 위한 데이터 x 수학 x AI 문제해결 프로젝트"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/hero-poster.png" />
+    <style>
+      @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css");
+      @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,600,0,0");
+
+      :root {
+        --navy-950: #04101f;
+        --navy-900: #07182d;
+        --navy-800: #0b2442;
+        --navy-700: #12345c;
+        --ink: #081426;
+        --text: #f7fbff;
+        --muted: #b9c8db;
+        --paper: #f7f8fb;
+        --paper-2: #edf4fb;
+        --line: rgba(99, 198, 238, 0.24);
+        --cyan: #45d7ff;
+        --blue: #246bfe;
+        --yellow: #ffd43d;
+        --gold: #d8a72f;
+        --green: #58d68d;
+        --coral: #ff7a59;
+        --radius: 6px;
+        --radius-round: 999px;
+        --border: #d8e0e8;
+        --focus: #246beb;
+        --shadow: none;
+        --max: 1120px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--text);
+        background:
+          linear-gradient(90deg, rgba(69, 215, 255, 0.055) 1px, transparent 1px),
+          linear-gradient(rgba(69, 215, 255, 0.045) 1px, transparent 1px),
+          linear-gradient(180deg, #04101f 0%, #07182d 44%, #f7f8fb 44%, #f7f8fb 100%);
+        background-size: 34px 34px, 34px 34px, auto;
+        font-family:
+          "Pretendard GOV",
+          "Pretendard Variable",
+          "Pretendard",
+          "Noto Sans KR",
+          "Apple SD Gothic Neo",
+          "Malgun Gothic",
+          system-ui,
+          sans-serif;
+        letter-spacing: 0;
+        font-size: 17px;
+        line-height: 1.5;
+        font-weight: 400;
+        overflow-x: hidden;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a:focus-visible,
+      button:focus-visible,
+      .btn:focus-visible {
+        outline: 3px solid var(--focus);
+        outline-offset: 3px;
+      }
+
+      .container {
+        width: min(100% - 32px, var(--max));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(4, 16, 31, 0.86);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(14px);
+      }
+
+      .nav {
+        min-height: 62px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .brand-mark {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--yellow);
+        font-family: "Material Symbols Outlined";
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 1;
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 600,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+
+      .nav-links {
+        display: none;
+        gap: 24px;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .nav-apply {
+        min-height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 14px;
+        border-radius: var(--radius);
+        background: var(--yellow);
+        color: var(--ink);
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      .hero {
+        display: flex;
+        align-items: center;
+        min-height: calc(92svh - 62px);
+        padding: 72px 0;
+        position: relative;
+        overflow: hidden;
+        background: var(--navy-950);
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("assets/hero-bg.png") center / cover no-repeat;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .hero-grid {
+        display: grid;
+        gap: 24px;
+        position: relative;
+        z-index: 2;
+        width: min(100% - 32px, var(--max));
+        margin: 0 auto;
+      }
+
+      .hero-content {
+        max-width: 760px;
+        text-align: left;
+        text-shadow: 0 3px 18px rgba(0, 0, 0, 0.62);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--cyan);
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+      .hero .eyebrow {
+        color: var(--yellow);
+        font-size: 16px;
+      }
+
+      .signal {
+        width: 9px;
+        height: 9px;
+        background: var(--yellow);
+        transform: rotate(45deg);
+        flex: 0 0 auto;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      .hero h1 {
+        margin-top: 13px;
+        font-size: clamp(44px, 9vw, 72px);
+        line-height: 1.5;
+        font-weight: 800;
+        letter-spacing: 0;
+      }
+
+      .hero h1 span {
+        color: var(--yellow);
+      }
+
+      .hero-copy {
+        margin-top: 18px;
+        color: #d8e9fb;
+        font-size: clamp(17px, 3.4vw, 21px);
+        line-height: 1.5;
+        font-weight: 700;
+      }
+
+      .cta-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-top: 24px;
+      }
+
+      .btn {
+        min-height: 52px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 0 18px;
+        border-radius: var(--radius);
+        font-weight: 700;
+        border: 1px solid transparent;
+        text-shadow: none;
+        transition:
+          background-color 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease;
+      }
+
+      .btn.primary {
+        background: var(--yellow);
+        color: var(--ink);
+        box-shadow: none;
+      }
+
+      .btn.primary:hover {
+        background: #f2c94c;
+      }
+
+      .btn.secondary {
+        border-color: rgba(255, 255, 255, 0.22);
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--text);
+      }
+
+      .btn.secondary:hover {
+        border-color: rgba(255, 255, 255, 0.44);
+        background: rgba(255, 255, 255, 0.14);
+      }
+
+      .hero-facts {
+        display: grid;
+        gap: 0;
+        width: min(100%, 820px);
+        margin: 22px 0 0;
+        padding: 16px 0 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      .fact {
+        min-height: auto;
+        display: grid;
+        grid-template-columns: 54px 1fr;
+        gap: 12px;
+        align-items: baseline;
+        padding: 8px 0;
+        border: 0;
+        background: transparent;
+        border-radius: 0;
+      }
+
+      .fact strong {
+        display: block;
+        color: var(--yellow);
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+
+      .fact span {
+        display: block;
+        color: #eef7ff;
+        font-size: 14px;
+        line-height: 1.5;
+        font-weight: 700;
+      }
+
+      .poster-frame {
+        position: relative;
+        border: 1px solid rgba(69, 215, 255, 0.32);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        background: var(--navy-800);
+      }
+
+      .poster-frame img {
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+
+      .poster-label {
+        position: absolute;
+        left: 12px;
+        bottom: 12px;
+        max-width: calc(100% - 24px);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 11px;
+        border: 1px solid rgba(69, 215, 255, 0.36);
+        background: rgba(4, 16, 31, 0.82);
+        border-radius: var(--radius);
+        color: #e8f8ff;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .section {
+        padding: 64px 0;
+        color: var(--ink);
+        background: var(--paper);
+      }
+
+      .section.dark {
+        color: var(--text);
+        background:
+          linear-gradient(rgba(69, 215, 255, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(69, 215, 255, 0.04) 1px, transparent 1px),
+          var(--navy-900);
+        background-size: 34px 34px;
+      }
+
+      .section.alt {
+        background: var(--paper-2);
+      }
+
+      #fit {
+        color: var(--text);
+        background: #081426;
+      }
+
+      #fit .section-heading p {
+        color: #d8e4f2;
+      }
+
+      #fit .title-accent {
+        color: var(--yellow);
+      }
+
+      #fit .fit-card {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.16);
+      }
+
+      #fit .fit-card h3 {
+        color: #ffffff;
+      }
+
+      #fit .fit-card p {
+        color: #cbd8e7;
+      }
+
+      .empathy-section {
+        padding: 64px 0;
+        color: var(--ink);
+        background: var(--paper);
+      }
+
+      .empathy-copy {
+        display: grid;
+        gap: 16px;
+      }
+
+      .empathy-layout {
+        display: grid;
+        gap: 24px;
+        align-items: end;
+      }
+
+      .empathy-copy h2 {
+        font-size: clamp(28px, 6vw, 40px);
+        line-height: 1.5;
+        font-weight: 700;
+      }
+
+      .empathy-copy p {
+        color: #435469;
+        font-size: 17px;
+        line-height: 1.5;
+        font-weight: 400;
+        white-space: pre-line;
+      }
+
+      .empathy-image {
+        overflow: hidden;
+        align-self: end;
+        margin-bottom: -64px;
+      }
+
+      .empathy-image img {
+        aspect-ratio: 16 / 10;
+        object-fit: contain;
+        object-position: center bottom;
+        padding: 0;
+      }
+
+      .section-heading {
+        display: grid;
+        gap: 8px;
+        margin-bottom: 32px;
+      }
+
+      .kicker {
+        color: var(--blue);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .dark .kicker {
+        color: var(--cyan);
+      }
+
+      .section-heading h2 {
+        font-size: clamp(28px, 7vw, 40px);
+        line-height: 1.5;
+        letter-spacing: 0;
+        font-weight: 700;
+      }
+
+      .section-heading p {
+        color: #435469;
+        font-size: 17px;
+        line-height: 1.5;
+        font-weight: 400;
+      }
+
+      .dark .section-heading p {
+        color: var(--muted);
+      }
+
+      .fit-grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .fit-card,
+      .mission-card,
+      .benefit,
+      .trust-panel,
+      .recruit-box {
+        border-radius: var(--radius);
+      }
+
+      .fit-card {
+        min-height: 138px;
+        padding: 24px;
+        background: #fff;
+        border: 1px solid var(--border);
+        box-shadow: none;
+      }
+
+      .fit-icon {
+        width: 38px;
+        height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 12px;
+        color: var(--yellow);
+        font-family: "Material Symbols Outlined";
+        font-size: 34px;
+        font-weight: 600;
+        line-height: 1;
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 600,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+
+      .fit-card h3 {
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 8px;
+        font-weight: 700;
+      }
+
+      .fit-card p,
+      .mission-card p,
+      .benefit p,
+      .trust-panel p,
+      .recruit-item dd {
+        color: #4a5c70;
+        line-height: 1.5;
+        font-weight: 400;
+      }
+
+      .problem-band {
+        display: grid;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .problem-copy {
+        padding: 24px 0;
+      }
+
+      .problem-copy h2 {
+        font-size: clamp(30px, 7vw, 40px);
+        line-height: 1.5;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      .problem-copy p {
+        color: #d2e2f5;
+        line-height: 1.5;
+        font-size: 17px;
+        font-weight: 400;
+      }
+
+      .data-animation {
+        position: relative;
+        min-height: 340px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: visible;
+      }
+
+      .lottie-stage {
+        width: min(100%, 460px);
+        aspect-ratio: 1 / 1;
+      }
+
+      .mission-grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .mission-card {
+        position: relative;
+        padding: 24px;
+        overflow: hidden;
+        background: linear-gradient(180deg, rgba(11, 36, 66, 0.96), rgba(7, 24, 45, 0.98));
+        border: 1px solid rgba(69, 215, 255, 0.24);
+        box-shadow: none;
+      }
+
+      .mission-card::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+        background: var(--accent, var(--blue));
+      }
+
+      .mission-no {
+        display: inline-flex;
+        margin-bottom: 14px;
+        color: var(--accent, var(--blue));
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .mission-card h3 {
+        color: #ffffff;
+        font-size: 22px;
+        line-height: 1.5;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      .mission-card strong {
+        display: block;
+        margin-bottom: 7px;
+        color: #f7fbff;
+        font-size: 16px;
+        line-height: 1.5;
+        font-weight: 700;
+      }
+
+      .mission-card p {
+        color: #d2e2f5;
+      }
+
+      .benefit-layout {
+        display: grid;
+        gap: 24px;
+      }
+
+      .kit-image {
+        overflow: hidden;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        box-shadow: none;
+      }
+
+      .kit-image img {
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+      }
+
+      .benefit-list {
+        display: grid;
+        gap: 8px;
+      }
+
+      .benefit {
+        display: grid;
+        grid-template-columns: 38px 1fr;
+        gap: 16px;
+        padding: 16px;
+        background: #fff;
+        border: 1px solid var(--border);
+      }
+
+      .benefit b {
+        width: 38px;
+        height: 38px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--navy-800);
+        color: var(--yellow);
+      }
+
+      .benefit h3 {
+        font-size: 17px;
+        line-height: 1.5;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+
+      .trust-grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .trust-panel {
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+      }
+
+      .trust-panel h3 {
+        font-size: 23px;
+        line-height: 1.5;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .trust-panel p {
+        color: #d2e2f5;
+      }
+
+      .trust-list {
+        display: grid;
+        gap: 8px;
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .trust-list li {
+        padding: 11px 12px;
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.08);
+        color: #ecf7ff;
+        font-weight: 700;
+      }
+
+      .certificate {
+        overflow: hidden;
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        box-shadow: var(--shadow);
+      }
+
+      .certificate img {
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+      }
+
+      .thumbnail-strip {
+        padding: 34px 0;
+        color: var(--text);
+        background: var(--navy-950);
+      }
+
+      .thumbnail-preview {
+        display: grid;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .thumb-copy {
+        display: grid;
+        gap: 8px;
+      }
+
+      .thumb-copy h2 {
+        font-size: clamp(34px, 9vw, 52px);
+        line-height: 1.5;
+        font-weight: 700;
+      }
+
+      .thumb-copy h2 span {
+        color: var(--yellow);
+      }
+
+      .thumb-copy p {
+        color: #d8e9fb;
+        font-size: 18px;
+        line-height: 1.5;
+        font-weight: 700;
+      }
+
+      .recruit-box {
+        padding: 22px;
+        background: #fff;
+        border: 1px solid var(--border);
+        box-shadow: none;
+      }
+
+      .recruit-grid {
+        display: grid;
+        gap: 8px;
+        margin: 24px 0;
+      }
+
+      .recruit-item {
+        display: grid;
+        gap: 4px;
+        padding: 14px 0;
+        border-bottom: 1px solid #e1e9f1;
+      }
+
+      .recruit-item dt {
+        color: var(--blue);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .footer {
+        padding: 28px 0 86px;
+        color: #aebdd0;
+        background: var(--navy-950);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .floating-cta {
+        position: fixed;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        z-index: 30;
+        display: flex;
+        justify-content: center;
+      }
+
+      .floating-cta .btn {
+        width: min(100%, 520px);
+        min-height: 54px;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 0.55s ease,
+          transform 0.55s ease;
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      @media (min-width: 680px) {
+        .container {
+          width: min(100% - 48px, var(--max));
+        }
+
+        .hero-grid {
+          width: min(100% - 48px, var(--max));
+        }
+
+        .nav-links {
+          display: flex;
+        }
+
+        .cta-row {
+          grid-template-columns: repeat(2, minmax(0, 210px));
+          justify-content: start;
+        }
+
+        .hero-facts,
+        .fit-grid,
+        .mission-grid,
+        .recruit-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .hero-facts {
+          column-gap: 24px;
+          row-gap: 4px;
+        }
+
+        .benefit {
+          padding: 24px;
+        }
+      }
+
+      @media (min-width: 900px) {
+        .hero {
+          min-height: min(820px, calc(92svh - 62px));
+          padding: 90px 0 92px;
+        }
+
+        .problem-band,
+        .empathy-layout,
+        .benefit-layout,
+        .trust-grid,
+        .thumbnail-preview {
+          grid-template-columns: 0.95fr 1.05fr;
+        }
+
+        .hero-content {
+          align-self: center;
+        }
+
+        .hero-facts {
+          max-width: 820px;
+        }
+
+        .fact span {
+          font-size: 14px;
+          white-space: nowrap;
+        }
+
+        .section {
+          padding: 92px 0;
+        }
+
+        .empathy-section {
+          padding: 92px 0;
+        }
+
+        .empathy-image {
+          margin-bottom: -92px;
+        }
+
+        .fit-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .mission-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .benefit-layout,
+        .trust-grid {
+          align-items: center;
+        }
+
+        .recruit-box {
+          padding: 34px;
+        }
+
+        .recruit-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 420px) {
+        .container {
+          width: min(100% - 24px, var(--max));
+        }
+
+        .hero-grid {
+          width: min(100% - 24px, var(--max));
+        }
+
+        .brand span {
+          max-width: 116px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .nav-apply {
+          padding: 0 11px;
+          font-size: 13px;
+        }
+
+        .hero-facts {
+          grid-template-columns: 1fr;
+        }
+
+        .data-animation {
+          min-height: 320px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="#top" aria-label="데이터 탐정단 홈">
+          <span class="brand-mark" aria-hidden="true">manage_search</span>
+          <span>데이터 탐정단</span>
+        </a>
+        <nav class="nav-links" aria-label="페이지 메뉴">
+          <a href="#fit">대상</a>
+          <a href="#missions">미션</a>
+          <a href="#benefits">혜택</a>
+          <a href="#recruit">모집안내</a>
+        </nav>
+        <a class="nav-apply" href="#recruit">지원하기</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <div class="eyebrow reveal"><span class="signal" aria-hidden="true"></span>중학생을 위한 데이터 x 수학 x AI 문제해결 프로젝트</div>
+            <h1 id="hero-title" class="reveal">데이터 탐정단<br /><span>1기 모집!</span></h1>
+            <p class="hero-copy reveal">
+              AI로 분석하고, 데이터로 사건을 해결하라.<br />
+              우리 주변의 문제를 발견해 해결책을 기획하는 8주 프로젝트.
+            </p>
+            <div class="cta-row reveal">
+              <a class="btn primary" href="#recruit">지금 지원하기</a>
+              <a class="btn secondary" href="#missions">미션 보기</a>
+            </div>
+            <div class="hero-facts reveal" aria-label="핵심 모집 정보">
+              <div class="fact"><strong>대상</strong><span>문제해결에 관심 있는 중학생 누구나</span></div>
+              <div class="fact"><strong>기간</strong><span>2026년 7월~8월, 총 8주</span></div>
+              <div class="fact"><strong>장소</strong><span>서울퓨처랩 창의교육관</span></div>
+              <div class="fact"><strong>혜택</strong><span>탐정 키트, 수료 인증서, AI 수학 체험권</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="empathy-section" aria-labelledby="empathy-title">
+        <div class="container">
+          <div class="empathy-layout">
+            <div class="empathy-copy reveal">
+              <h2 id="empathy-title">교과서에서 보던 수학이<br />알고 보니 우리 생활에도?</h2>
+              <p>학교 앞 교통 혼잡, 급식 만족도,
+청소년 여가 공간, 우리 동네 안전 문제까지.
+그거 알아? 숫자와 그래프는 세상을 읽는 단서가 된다는 사실!
+우리 탐정들은 읽어낸 데이터를 여러 방법으로 분석하며
+우리만의 해결책을 찾아가고 있어.</p>
+            </div>
+            <div class="empathy-image reveal">
+              <img src="assets/empathy-students.png" alt="데이터 탐정단에 참여하는 중학생 네 명이 자신감 있게 서 있는 모습" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="fit" class="section" aria-labelledby="fit-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2 id="fit-title"><span class="title-accent">데이터 탐정단</span>은<br />이런 예비 탐정을 기다리고 있어요</h2>
+            <p>
+              데이터 탐정단은 수학을 공식으로만 배우지 않고, 실생활 속 문제를 해결하는 도구로 활용해보는 프로그램입니다.
+            </p>
+          </div>
+          <div class="fit-grid">
+            <article class="fit-card reveal">
+              <div class="fit-icon" aria-hidden="true">calculate</div>
+              <h3>수학을 실생활에 써먹어 보고 싶은 학생</h3>
+              <p>학교 앞 교통, 급식 만족도, 동네 안전 문제처럼 가까운 주제를 숫자와 그래프로 읽습니다.</p>
+            </article>
+            <article class="fit-card reveal">
+              <div class="fit-icon" aria-hidden="true">smart_toy</div>
+              <h3>AI를 똑똑한 도구로 활용하고 싶은 학생</h3>
+              <p>AI에게 묻고, 답을 확인하며, 놓친 근거가 없는지 직접 검증합니다.</p>
+            </article>
+            <article class="fit-card reveal">
+              <div class="fit-icon" aria-hidden="true">groups</div>
+              <h3>친구들과 팀을 이루어 해결하고 싶은 학생</h3>
+              <p>팀별로 아이디어를 발전시키고, 멘토 코칭을 통해 결과물을 다듬습니다.</p>
+            </article>
+            <article class="fit-card reveal">
+              <div class="fit-icon" aria-hidden="true">co_present</div>
+              <h3>데이터, 앱, 기획, 발표에 관심 있는 학생</h3>
+              <p>분석에서 끝나지 않고 우리 팀만의 해결 기획안으로 완성합니다.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section dark" aria-labelledby="problem-title">
+        <div class="container problem-band">
+          <div class="problem-copy reveal">
+            <h2 id="problem-title">아직 낯설다고요?<br />처음이어도 괜찮아요!</h2>
+            <p>
+              궁금한 것을 질문하고, 친구들과 의견을 나누고,
+              데이터 속에 숨은 의미를 찾아보고 싶은 마음이면 충분합니다.
+            </p>
+          </div>
+          <div class="data-animation reveal" aria-label="데이터 그래프 애니메이션">
+            <div id="data-lottie" class="lottie-stage" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="missions" class="section alt" aria-labelledby="mission-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2 id="mission-title">탐정단의 4가지 미션</h2>
+            <p>8주동안 주어지는 4가지 미션을 해결하며 문제해결력을 기를 수 있습니다.</p>
+          </div>
+          <div class="mission-grid">
+            <article class="mission-card reveal" style="--accent: var(--yellow)">
+              <div class="mission-no">Mission 01</div>
+              <h3>사건 발견</h3>
+              <strong>우리 주변의 문제를 찾아라!</strong>
+              <p>학교와 동네에서 바꾸고 싶은 문제를 팀별 탐구 주제로 정합니다.</p>
+            </article>
+            <article class="mission-card reveal" style="--accent: var(--cyan)">
+              <div class="mission-no">Mission 02</div>
+              <h3>단서 수집</h3>
+              <strong>공공데이터에서 근거를 찾아라!</strong>
+              <p>숫자, 그래프, 설문, 공공데이터 속에서 문제의 실마리를 찾습니다.</p>
+            </article>
+            <article class="mission-card reveal" style="--accent: var(--blue)">
+              <div class="mission-no">Mission 03</div>
+              <h3>AI 분석</h3>
+              <strong>AI에게 묻고, 결과를 검증하라!</strong>
+              <p>AI를 분석 파트너로 사용하되, 탐정처럼 근거를 확인합니다.</p>
+            </article>
+            <article class="mission-card reveal" style="--accent: var(--gold)">
+              <div class="mission-no">Mission 04</div>
+              <h3>해결 기획</h3>
+              <strong>해결 아이디어를 기획안으로 완성하라!</strong>
+              <p>우리 팀만의 제안을 발표 가능한 기획안으로 정리합니다.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="benefits" class="section" aria-labelledby="benefit-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2 id="benefit-title">데이터 탐정단이 되면</h2>
+            <p>참여 경험이 실제 성취감으로 남도록 활동 공간, 멘토링, 결과물, 수료 혜택을 함께 제공합니다.</p>
+          </div>
+          <div class="benefit-layout">
+            <div class="kit-image reveal">
+              <img src="assets/detective-kit.png" alt="데이터 탐정단 1기 웰컴 키트, 명찰, 노트, 미션 카드, 스티커 구성품" />
+            </div>
+            <div class="benefit-list">
+              <article class="benefit reveal">
+                <b>01</b>
+                <div>
+                  <h3>서울퓨처랩 메이커 공간 체험</h3>
+                  <p>AI·미래기술·창의교육 공간에서 데이터 분석 미션을 직접 수행합니다.</p>
+                </div>
+              </article>
+              <article class="benefit reveal">
+                <b>02</b>
+                <div>
+                  <h3>팀별 대학생 멘토 코칭</h3>
+                  <p>데이터사이언스 관련 전공 멘토가 아이디어를 더 탄탄하게 다듬도록 돕습니다.</p>
+                </div>
+              </article>
+              <article class="benefit reveal">
+                <b>03</b>
+                <div>
+                  <h3>우리 팀만의 해결 기획안 제작</h3>
+                  <p>조사와 분석 결과를 발표 가능한 프로젝트 산출물로 완성합니다.</p>
+                </div>
+              </article>
+              <article class="benefit reveal">
+                <b>04</b>
+                <div>
+                  <h3>1기 탐정 키트와 수료 인증서</h3>
+                  <p>참여의 시작과 마무리를 기억할 수 있는 굿즈와 인증을 제공합니다.</p>
+                </div>
+              </article>
+              <article class="benefit reveal">
+                <b>05</b>
+                <div>
+                  <h3>AI 수학 코스웨어 2개월 무료체험권</h3>
+                  <p>프로그램 이후에도 데이터와 수학 학습을 이어갈 수 있습니다.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section dark" aria-labelledby="trust-title">
+        <div class="container trust-grid">
+          <div class="trust-panel reveal">
+            <h3 id="trust-title">프로젝트형 융합 교육으로 안전하고 밀도 있게 운영합니다</h3>
+            <p>
+              수과학융합 영재교육원 기반의 교육 경험과 서울퓨처랩 공간 자원을 활용해,
+              중학생이 수학·데이터 리터러시·AI 활용 능력·협업·발표 역량을 함께 기를 수 있도록 설계했습니다.
+            </p>
+            <ul class="trust-list">
+              <li>데이터 기반 사고력 강화</li>
+              <li>AI 활용 및 검증 경험</li>
+              <li>팀 프로젝트와 발표 역량 성장</li>
+            </ul>
+          </div>
+          <div class="certificate reveal">
+            <img src="assets/certificate.png" alt="데이터 탐정단 1기 수료 인증서 예시" />
+          </div>
+        </div>
+      </section>
+
+      <section class="thumbnail-strip" aria-labelledby="thumbnail-title">
+        <div class="container thumbnail-preview">
+          <div class="thumb-copy reveal">
+            <h2 id="thumbnail-title">너도 탐정이<br /><span>될 수 있어!</span></h2>
+            <p>중학생을 위한 데이터 x 수학 x AI 문제해결 프로젝트</p>
+          </div>
+          <div class="poster-frame reveal">
+            <img src="assets/team-project.png" alt="팀 프로젝트를 완료한 학생들이 결과물을 소개하는 모습" />
+          </div>
+        </div>
+      </section>
+
+      <section id="recruit" class="section" aria-labelledby="recruit-title">
+        <div class="container">
+          <div class="recruit-box reveal">
+            <div class="section-heading" style="margin-bottom: 0">
+              <h2 id="recruit-title">모집 안내</h2>
+              <p>신청 링크가 준비되면 아래 버튼을 연결해 바로 접수 페이지로 이동하게 만들 수 있습니다.</p>
+            </div>
+            <dl class="recruit-grid">
+              <div class="recruit-item">
+                <dt>프로그램명</dt>
+                <dd>데이터 탐정단 1기</dd>
+              </div>
+              <div class="recruit-item">
+                <dt>대상</dt>
+                <dd>문제해결에 관심 있는 중학생 누구나</dd>
+              </div>
+              <div class="recruit-item">
+                <dt>기간</dt>
+                <dd>2026년 7월~8월, 총 8주</dd>
+              </div>
+              <div class="recruit-item">
+                <dt>장소</dt>
+                <dd>서울퓨처랩 창의교육관</dd>
+              </div>
+              <div class="recruit-item">
+                <dt>활동 방식</dt>
+                <dd>팀 프로젝트, 데이터 분석, AI 활용, 해결 기획안 제작</dd>
+              </div>
+              <div class="recruit-item">
+                <dt>제공 혜택</dt>
+                <dd>탐정 키트, 수료 인증서, AI 수학 코스웨어 2개월 무료체험권, 팀별 멘토링</dd>
+              </div>
+            </dl>
+            <a class="btn primary" href="mailto:apply@example.com?subject=%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%83%90%EC%A0%95%EB%8B%A8%201%EA%B8%B0%20%EC%A7%80%EC%9B%90%20%EB%AC%B8%EC%9D%98">지금 데이터 탐정단 지원하기</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">데이터 탐정단 1기 모집 · 서울퓨처랩 창의교육관 · 2026년 7월~8월</div>
+    </footer>
+
+    <div class="floating-cta" aria-label="빠른 지원 버튼">
+      <a class="btn primary" href="#recruit">데이터 탐정단 1기 지원하기</a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+    <script>
+      const revealTargets = document.querySelectorAll(".reveal");
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.14 }
+        );
+
+        revealTargets.forEach((target, index) => {
+          target.style.transitionDelay = `${Math.min(index % 4, 3) * 60}ms`;
+          observer.observe(target);
+        });
+      } else {
+        revealTargets.forEach((target) => target.classList.add("is-visible"));
+      }
+
+      const lottieTarget = document.getElementById("data-lottie");
+
+      if (lottieTarget && window.lottie) {
+        window.lottie.loadAnimation({
+          container: lottieTarget,
+          renderer: "svg",
+          loop: true,
+          autoplay: !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+          path: "assets/data-animation.json",
+        });
+      }
+    </script>
+  </body>
+</html>
