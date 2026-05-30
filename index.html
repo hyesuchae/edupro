@@ -336,37 +336,6 @@
         font-weight: 700;
       }
 
-      .poster-frame {
-        position: relative;
-        border: 1px solid rgba(69, 215, 255, 0.32);
-        border-radius: var(--radius);
-        overflow: hidden;
-        box-shadow: var(--shadow);
-        background: var(--navy-800);
-      }
-
-      .poster-frame img {
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-      }
-
-      .poster-label {
-        position: absolute;
-        left: 12px;
-        bottom: 12px;
-        max-width: calc(100% - 24px);
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 9px 11px;
-        border: 1px solid rgba(69, 215, 255, 0.36);
-        background: rgba(4, 16, 31, 0.82);
-        border-radius: var(--radius);
-        color: #e8f8ff;
-        font-size: 12px;
-        font-weight: 700;
-      }
-
       .section {
         padding: 64px 0;
         color: var(--ink);
@@ -594,8 +563,8 @@
         position: relative;
         padding: 24px;
         overflow: hidden;
-        background: linear-gradient(180deg, rgba(11, 36, 66, 0.96), rgba(7, 24, 45, 0.98));
-        border: 1px solid rgba(69, 215, 255, 0.24);
+        background: #ffffff;
+        border: 1px solid var(--border);
         box-shadow: none;
       }
 
@@ -618,7 +587,7 @@
       }
 
       .mission-card h3 {
-        color: #ffffff;
+        color: var(--ink);
         font-size: 22px;
         line-height: 1.5;
         font-weight: 700;
@@ -628,14 +597,14 @@
       .mission-card strong {
         display: block;
         margin-bottom: 7px;
-        color: #f7fbff;
+        color: var(--ink);
         font-size: 16px;
         line-height: 1.5;
         font-weight: 700;
       }
 
       .mission-card p {
-        color: #d2e2f5;
+        color: #4a5c70;
       }
 
       .benefit-layout {
@@ -643,16 +612,40 @@
         gap: 24px;
       }
 
-      .kit-image {
+      .benefit-slider {
+        display: grid;
+        gap: 14px;
+        align-content: start;
+      }
+
+      .benefit-visual {
+        position: relative;
         overflow: hidden;
         border-radius: var(--radius);
         border: 1px solid var(--border);
         box-shadow: none;
+        background: #fff;
       }
 
-      .kit-image img {
+      .benefit-slide {
+        display: none;
+      }
+
+      .benefit-slide.is-active {
+        display: block;
+      }
+
+      .benefit-slide img {
         aspect-ratio: 4 / 3;
         object-fit: cover;
+      }
+
+      .benefit-caption {
+        min-height: 54px;
+        padding: 0 2px;
+        color: #435469;
+        font-size: 15px;
+        line-height: 1.5;
       }
 
       .benefit-list {
@@ -660,18 +653,31 @@
         gap: 8px;
       }
 
-      .benefit {
+      .benefit-tab {
+        width: 100%;
         display: grid;
-        grid-template-columns: 38px 1fr;
+        grid-template-columns: 44px 1fr;
         gap: 16px;
         padding: 16px;
         background: #fff;
         border: 1px solid var(--border);
+        border-radius: var(--radius);
+        color: var(--ink);
+        text-align: left;
+        cursor: pointer;
+        transition:
+          border-color 0.2s ease,
+          background-color 0.2s ease;
       }
 
-      .benefit b {
-        width: 38px;
-        height: 38px;
+      .benefit-tab.is-active {
+        border-color: var(--yellow);
+        background: #fffdf3;
+      }
+
+      .benefit-tab b {
+        width: 44px;
+        height: 44px;
         display: grid;
         place-items: center;
         border-radius: 50%;
@@ -679,11 +685,17 @@
         color: var(--yellow);
       }
 
-      .benefit h3 {
+      .benefit-tab h3 {
         font-size: 17px;
         line-height: 1.5;
         font-weight: 700;
         margin-bottom: 5px;
+      }
+
+      .benefit-tab p {
+        color: #4a5c70;
+        line-height: 1.5;
+        font-weight: 400;
       }
 
       .trust-grid {
@@ -692,36 +704,57 @@
       }
 
       .trust-panel {
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.14);
+        padding: 0;
+        background: transparent;
+        border: 0;
       }
 
       .trust-panel h3 {
-        font-size: 23px;
+        font-size: clamp(28px, 7vw, 40px);
         line-height: 1.5;
         font-weight: 700;
-        margin-bottom: 10px;
+        margin-bottom: 14px;
       }
 
       .trust-panel p {
         color: #d2e2f5;
+        font-size: 17px;
+        line-height: 1.5;
       }
 
       .trust-list {
         display: grid;
-        gap: 8px;
-        margin: 18px 0 0;
+        gap: 0;
+        margin: 24px 0 0;
         padding: 0;
         list-style: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.18);
       }
 
       .trust-list li {
-        padding: 11px 12px;
-        border-radius: var(--radius);
-        background: rgba(255, 255, 255, 0.08);
+        position: relative;
+        padding: 14px 0 14px 28px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        background: transparent;
         color: #ecf7ff;
         font-weight: 700;
+      }
+
+      .trust-list li::before {
+        content: "check";
+        position: absolute;
+        left: 0;
+        top: 15px;
+        color: var(--yellow);
+        font-family: "Material Symbols Outlined";
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1;
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 600,
+          "GRAD" 0,
+          "opsz" 24;
       }
 
       .certificate {
@@ -734,40 +767,6 @@
       .certificate img {
         aspect-ratio: 4 / 3;
         object-fit: cover;
-      }
-
-      .thumbnail-strip {
-        padding: 34px 0;
-        color: var(--text);
-        background: var(--navy-950);
-      }
-
-      .thumbnail-preview {
-        display: grid;
-        gap: 24px;
-        align-items: center;
-      }
-
-      .thumb-copy {
-        display: grid;
-        gap: 8px;
-      }
-
-      .thumb-copy h2 {
-        font-size: clamp(34px, 9vw, 52px);
-        line-height: 1.5;
-        font-weight: 700;
-      }
-
-      .thumb-copy h2 span {
-        color: var(--yellow);
-      }
-
-      .thumb-copy p {
-        color: #d8e9fb;
-        font-size: 18px;
-        line-height: 1.5;
-        font-weight: 700;
       }
 
       .recruit-box {
@@ -819,6 +818,23 @@
         min-height: 54px;
       }
 
+      .floating-cta .btn.primary {
+        animation: cta-pulse 2.4s ease-in-out infinite;
+      }
+
+      @keyframes cta-pulse {
+        0%,
+        100% {
+          filter: brightness(1);
+          transform: translateY(0) scale(1);
+        }
+
+        50% {
+          filter: brightness(1.08);
+          transform: translateY(-1px) scale(1.01);
+        }
+      }
+
       .reveal {
         opacity: 0;
         transform: translateY(18px);
@@ -862,7 +878,7 @@
           row-gap: 4px;
         }
 
-        .benefit {
+        .benefit-tab {
           padding: 24px;
         }
       }
@@ -876,8 +892,7 @@
         .problem-band,
         .empathy-layout,
         .benefit-layout,
-        .trust-grid,
-        .thumbnail-preview {
+        .trust-grid {
           grid-template-columns: 0.95fr 1.05fr;
         }
 
@@ -966,6 +981,10 @@
           opacity: 1;
           transform: none;
           transition: none;
+        }
+
+        .floating-cta .btn.primary {
+          animation: none;
         }
 
       }
@@ -1116,49 +1135,57 @@
       <section id="benefits" class="section" aria-labelledby="benefit-title">
         <div class="container">
           <div class="section-heading reveal">
-            <h2 id="benefit-title">데이터 탐정단이 되면</h2>
-            <p>참여 경험이 실제 성취감으로 남도록 활동 공간, 멘토링, 결과물, 수료 혜택을 함께 제공합니다.</p>
+            <h2 id="benefit-title">지금 참여하면 문제해결 경험부터<br />다양한 선물과 혜택까지!</h2>
           </div>
           <div class="benefit-layout">
-            <div class="kit-image reveal">
-              <img src="assets/detective-kit.png" alt="데이터 탐정단 1기 웰컴 키트, 명찰, 노트, 미션 카드, 스티커 구성품" />
+            <div class="benefit-slider reveal" aria-live="polite">
+              <div class="benefit-visual">
+                <div class="benefit-slide is-active" data-benefit-slide="0">
+                  <img src="assets/futurelab.png" alt="서울퓨처랩 미래기술 체험 공간에서 학생들이 수업을 듣는 모습" />
+                </div>
+                <div class="benefit-slide" data-benefit-slide="1">
+                  <img src="assets/mentors.png" alt="멘토와 학생들이 노트북을 보며 학습하는 모습" />
+                </div>
+                <div class="benefit-slide" data-benefit-slide="2">
+                  <img src="assets/team-project.png" alt="학생들이 팀 프로젝트 결과물을 소개하는 모습" />
+                </div>
+                <div class="benefit-slide" data-benefit-slide="3">
+                  <img src="assets/detective-kit.png" alt="데이터 탐정단 1기 웰컴 키트, 명찰, 노트, 미션 카드, 스티커 구성품" />
+                </div>
+              </div>
+              <p class="benefit-caption" id="benefit-caption">
+                AI·미래기술·메이커 공간 서울퓨처랩에서 데이터 분석 미션을 직접 체험합니다.
+              </p>
             </div>
-            <div class="benefit-list">
-              <article class="benefit reveal">
+            <div class="benefit-list reveal" role="tablist" aria-label="참여 혜택 선택">
+              <button class="benefit-tab is-active" type="button" role="tab" aria-selected="true" data-benefit-index="0">
                 <b>01</b>
                 <div>
-                  <h3>서울퓨처랩 메이커 공간 체험</h3>
-                  <p>AI·미래기술·창의교육 공간에서 데이터 분석 미션을 직접 수행합니다.</p>
+                  <h3>서울퓨처랩에서 직접 체험</h3>
+                  <p>AI·미래기술·메이커 공간 서울퓨처랩에서 데이터 분석 미션을 직접 체험!</p>
                 </div>
-              </article>
-              <article class="benefit reveal">
+              </button>
+              <button class="benefit-tab" type="button" role="tab" aria-selected="false" data-benefit-index="1">
                 <b>02</b>
                 <div>
-                  <h3>팀별 대학생 멘토 코칭</h3>
-                  <p>데이터사이언스 관련 전공 멘토가 아이디어를 더 탄탄하게 다듬도록 돕습니다.</p>
+                  <h3>대학생 멘토 코칭</h3>
+                  <p>팀별 대학생 멘토의 코칭으로 아이디어를 더 탄탄하게!</p>
                 </div>
-              </article>
-              <article class="benefit reveal">
+              </button>
+              <button class="benefit-tab" type="button" role="tab" aria-selected="false" data-benefit-index="2">
                 <b>03</b>
                 <div>
-                  <h3>우리 팀만의 해결 기획안 제작</h3>
-                  <p>조사와 분석 결과를 발표 가능한 프로젝트 산출물로 완성합니다.</p>
+                  <h3>우리 팀만의 기획안</h3>
+                  <p>우리 팀만의 아이디어가 멋진 기획안으로!</p>
                 </div>
-              </article>
-              <article class="benefit reveal">
+              </button>
+              <button class="benefit-tab" type="button" role="tab" aria-selected="false" data-benefit-index="3">
                 <b>04</b>
                 <div>
-                  <h3>1기 탐정 키트와 수료 인증서</h3>
-                  <p>참여의 시작과 마무리를 기억할 수 있는 굿즈와 인증을 제공합니다.</p>
+                  <h3>선물과 수료 혜택</h3>
+                  <p>1기 탐정 키트, AI코스웨어 2개월 수강권, 수료 인증서까지!</p>
                 </div>
-              </article>
-              <article class="benefit reveal">
-                <b>05</b>
-                <div>
-                  <h3>AI 수학 코스웨어 2개월 무료체험권</h3>
-                  <p>프로그램 이후에도 데이터와 수학 학습을 이어갈 수 있습니다.</p>
-                </div>
-              </article>
+              </button>
             </div>
           </div>
         </div>
@@ -1167,31 +1194,19 @@
       <section class="section dark" aria-labelledby="trust-title">
         <div class="container trust-grid">
           <div class="trust-panel reveal">
-            <h3 id="trust-title">프로젝트형 융합 교육으로 안전하고 밀도 있게 운영합니다</h3>
+            <h3 id="trust-title">영재교육원 15년 경력 강사가<br />꼼꼼하게 코칭하고 지도합니다.</h3>
             <p>
-              수과학융합 영재교육원 기반의 교육 경험과 서울퓨처랩 공간 자원을 활용해,
-              중학생이 수학·데이터 리터러시·AI 활용 능력·협업·발표 역량을 함께 기를 수 있도록 설계했습니다.
+              데이터 탐정단은 중학생이 자기 주변의 문제를 수학적 사고와 데이터로
+              이해해보는 프로젝트형 교육입니다. 팀 활동과 멘토 피드백을 통해 조사, 분석, 기획, 발표 과정을 단계별로 경험합니다.
             </p>
             <ul class="trust-list">
-              <li>데이터 기반 사고력 강화</li>
-              <li>AI 활용 및 검증 경험</li>
-              <li>팀 프로젝트와 발표 역량 성장</li>
+              <li>문제를 읽고 해석하는 힘을 기릅니다</li>
+              <li>AI를 사용할 때 필요한 질문력과 검증 태도를 함께 다룹니다</li>
+              <li>팀별 결과물을 완성하며 협업과 발표 자신감을 키웁니다</li>
             </ul>
           </div>
           <div class="certificate reveal">
             <img src="assets/certificate.png" alt="데이터 탐정단 1기 수료 인증서 예시" />
-          </div>
-        </div>
-      </section>
-
-      <section class="thumbnail-strip" aria-labelledby="thumbnail-title">
-        <div class="container thumbnail-preview">
-          <div class="thumb-copy reveal">
-            <h2 id="thumbnail-title">너도 탐정이<br /><span>될 수 있어!</span></h2>
-            <p>중학생을 위한 데이터 x 수학 x AI 문제해결 프로젝트</p>
-          </div>
-          <div class="poster-frame reveal">
-            <img src="assets/team-project.png" alt="팀 프로젝트를 완료한 학생들이 결과물을 소개하는 모습" />
           </div>
         </div>
       </section>
@@ -1201,7 +1216,7 @@
           <div class="recruit-box reveal">
             <div class="section-heading" style="margin-bottom: 0">
               <h2 id="recruit-title">모집 안내</h2>
-              <p>신청 링크가 준비되면 아래 버튼을 연결해 바로 접수 페이지로 이동하게 만들 수 있습니다.</p>
+              <p>데이터와 AI를 활용해 우리 주변의 문제를 해결해보고 싶은 중학생을 모집합니다.</p>
             </div>
             <dl class="recruit-grid">
               <div class="recruit-item">
@@ -1222,7 +1237,7 @@
               </div>
               <div class="recruit-item">
                 <dt>활동 방식</dt>
-                <dd>팀 프로젝트, 데이터 분석, AI 활용, 해결 기획안 제작</dd>
+                <dd>팀 프로젝트, 데이터 조사와 분석, AI 활용, 해결 기획안 발표</dd>
               </div>
               <div class="recruit-item">
                 <dt>제공 혜택</dt>
@@ -1279,6 +1294,50 @@
           path: "assets/data-animation.json",
         });
       }
+
+      const benefitTabs = Array.from(document.querySelectorAll(".benefit-tab"));
+      const benefitSlides = Array.from(document.querySelectorAll(".benefit-slide"));
+      const benefitCaption = document.getElementById("benefit-caption");
+      const benefitTexts = [
+        "AI·미래기술·메이커 공간 서울퓨처랩에서 데이터 분석 미션을 직접 체험합니다.",
+        "팀별 대학생 멘토의 코칭으로 아이디어를 더 탄탄하게 다듬습니다.",
+        "우리 팀만의 아이디어를 발표 가능한 멋진 기획안으로 완성합니다.",
+        "1기 탐정 키트, AI코스웨어 2개월 수강권, 수료 인증서까지 함께 제공합니다.",
+      ];
+      let benefitTimer;
+      let activeBenefit = 0;
+
+      function setBenefit(index) {
+        activeBenefit = index;
+        benefitSlides.forEach((slide, slideIndex) => {
+          slide.classList.toggle("is-active", slideIndex === index);
+        });
+        benefitTabs.forEach((tab, tabIndex) => {
+          const isActive = tabIndex === index;
+          tab.classList.toggle("is-active", isActive);
+          tab.setAttribute("aria-selected", String(isActive));
+        });
+        if (benefitCaption) {
+          benefitCaption.textContent = benefitTexts[index];
+        }
+      }
+
+      function startBenefitAutoPlay() {
+        if (!benefitTabs.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        benefitTimer = window.setInterval(() => {
+          setBenefit((activeBenefit + 1) % benefitTabs.length);
+        }, 4200);
+      }
+
+      benefitTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          window.clearInterval(benefitTimer);
+          setBenefit(Number(tab.dataset.benefitIndex));
+          startBenefitAutoPlay();
+        });
+      });
+
+      startBenefitAutoPlay();
     </script>
   </body>
 </html>
